@@ -361,7 +361,7 @@ watch-rebuild:
 			TRIGGER_TIME=$$(stat -f %m /tmp/.jekyll_rebuild_trigger 2>/dev/null || stat -c %Y /tmp/.jekyll_rebuild_trigger); \
 			if [ $$TRIGGER_TIME -gt $$LAST_TRIGGER ]; then \
 				echo "Changes detected, waiting for more changes to settle..."; \
-				sleep 3; \
+				sleep 10; \
 				NEW_TRIGGER=$$(stat -f %m /tmp/.jekyll_rebuild_trigger 2>/dev/null || stat -c %Y /tmp/.jekyll_rebuild_trigger); \
 				if [ $$NEW_TRIGGER -eq $$TRIGGER_TIME ]; then \
 					echo "🔨Rebuilding Jekyll site..."; \
@@ -473,7 +473,7 @@ wait-for-server:
 			grep "Server address:" $(LOG_FILE); \
 			break; \
 		fi; \
-		if [ $$COUNTER -eq 300 ]; then \
+		if [ $$COUNTER -eq 900 ]; then \
 			echo "Server timed out after $$COUNTER seconds."; \
 			echo "Review errors from $(LOG_FILE)."; \
 			cat $(LOG_FILE); \

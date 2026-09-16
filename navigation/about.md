@@ -1,138 +1,170 @@
 ---
 layout: post
-title: About
-permalink: /about/
-comments: true
+title: Rishabh's Portfolio
+hide: true
+show_reading_time: false
 ---
 
-## As a conversation Starter
+# Hi! My name is Rishabh Jha 👋
 
-Here are some places I have lived.
+I am a high school student who enjoys **computer science, artificial intelligence, badminton, and building projects**. I have experience with **Python, Java, JavaScript, HTML, Flask, and GitHub**.
 
-<comment>
-Flags are made using Wikipedia images
-</comment>
+My goal is to continue improving my programming skills, learn more about **AI and software engineering**, and create projects that can solve real-world problems.
 
-<style>
-    /* Style looks pretty compact, 
-       - grid-container and grid-item are referenced the code 
-    */
-    .grid-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Dynamic columns */
-        gap: 10px;
-    }
-    .grid-item {
-        text-align: center;
-    }
-    .grid-item img {
-        width: 100%;
-        height: 100px; /* Fixed height for uniformity */
-        object-fit: contain; /* Ensure the image fits within the fixed height */
-    }
-    .grid-item p {
-        margin: 5px 0; /* Add some margin for spacing */
-    }
+Outside of coding, I enjoy playing **badminton**, working out, spending time with friends and family, and learning new things.
 
-    .image-gallery {
-        display: flex;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        gap: 10px;
-        }
+---
 
-    .image-gallery img {
-        max-height: 150px;
-        object-fit: cover;
-        border-radius: 5px;
-    }
-</style>
+### 💻 Development Environment
 
-<!-- This grid_container class is used by CSS styling and the id is used by JavaScript connection -->
-<div class="grid-container" id="grid_container">
-    <!-- content will be added here by JavaScript -->
+> Coding starts with the right tools. These are some of the tools I use to build, test, and share my projects.
+
+<div style="display: flex; flex-wrap: wrap; gap: 10px;">
+
+    <a href="https://opencodingsociety.com" style="text-decoration: none; display: inline-flex; align-items: center; gap: 8px; padding: 10px 14px; border: 1px solid #FA8072; border-radius: 6px; font-weight: 700; transition: all 0.3s;">
+        <img src="{{ '/favicon.ico' | relative_url }}" alt="OCS logo" style="width: 16px; height: 16px;">
+        OCS
+    </a>
+
+    <a href="https://github.com" style="text-decoration: none; display: inline-flex; align-items: center; gap: 8px; padding: 10px 14px; border: 1px solid #FFF; border-radius: 6px; font-weight: 700; transition: all 0.3s;">
+        <svg style="width: 16px; height: 16px; fill: currentColor;" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+        </svg>
+        GitHub
+    </a>
+
+    <a href="https://vscode.dev/" style="text-decoration: none; display: inline-flex; align-items: center; gap: 8px; padding: 10px 14px; border: 1px solid #007ACC; border-radius: 6px; font-weight: 700; transition: all 0.3s;">
+        <svg style="width: 16px; height: 16px; fill: currentColor;" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+            <path d="M11.34 0L5.66 5.39l-2.4-1.8L1.19 4.82v6.36l2.07 1.23 2.4-1.8L11.34 16 15 14.23V1.77L11.34 0zm.59 11.57l-3.86-3.54 3.86-3.54v7.08z"/>
+        </svg>
+        VS Code
+    </a>
+
 </div>
 
-<script>
-    // 1. Make a connection to the HTML container defined in the HTML div
-    var container = document.getElementById("grid_container"); // This container connects to the HTML div
+<br>
 
-    // 2. Define a JavaScript object for our http source and our data rows for the Living in the World grid
-    var http_source = "https://upload.wikimedia.org/wikipedia/commons/";
-    var living_in_the_world = [
-        {"flag": "0/01/Flag_of_California.svg", "greeting": "Hey", "description": "California - forever"},
-        {"flag": "b/b9/Flag_of_Oregon.svg", "greeting": "Hi", "description": "Oregon - 9 years"},
-        {"flag": "b/be/Flag_of_England.svg", "greeting": "Alright mate", "description": "England - 2 years"},
-        {"flag": "e/ef/Flag_of_Hawaii.svg", "greeting": "Aloha", "description": "Hawaii - 2 years"},
-    ];
+### 🚀 My Coding Experience
 
-    // 3a. Consider how to update style count for size of container
-    // The grid-template-columns has been defined as dynamic with auto-fill and minmax
+> These are some of the programming languages and technologies I have worked with.
 
-    // 3b. Build grid items inside of our container for each row of data
-    for (const location of living_in_the_world) {
-        // Create a "div" with "class grid-item" for each row
-        var gridItem = document.createElement("div");
-        gridItem.className = "grid-item";  // This class name connects the gridItem to the CSS style elements
-        // Add "img" HTML tag for the flag
-        var img = document.createElement("img");
-        img.src = http_source + location.flag; // concatenate the source and flag
-        img.alt = location.flag + " Flag"; // add alt text for accessibility
+<div style="display: flex; flex-wrap: wrap; gap: 10px;">
 
-        // Add "p" HTML tag for the description
-        var description = document.createElement("p");
-        description.textContent = location.description; // extract the description
+    <div style="background-color: var(--green); color: black; padding: 10px 20px; border-radius: 5px; font-weight: bold;">
+        Python
+    </div>
 
-        // Add "p" HTML tag for the greeting
-        var greeting = document.createElement("p");
-        greeting.textContent = location.greeting;  // extract the greeting
+    <div style="background-color: var(--blue); color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold;">
+        Java
+    </div>
 
-        // Append img and p HTML tags to the grid item DIV
-        gridItem.appendChild(img);
-        gridItem.appendChild(description);
-        gridItem.appendChild(greeting);
+    <div style="background-color: var(--warn); color: black; padding: 10px 20px; border-radius: 5px; font-weight: bold;">
+        JavaScript
+    </div>
 
-        // Append the grid item DIV to the container DIV
-        container.appendChild(gridItem);
-    }
-</script>
+    <div style="background-color: var(--orange); color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold;">
+        HTML / CSS
+    </div>
 
-### Journey through Life
+    <div style="background-color: var(--teal); color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold;">
+        Flask
+    </div>
 
-Here is what I did at those places
+    <div style="background-color: var(--purple); color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold;">
+        GitHub
+    </div>
 
-- 🏫 Lots of Elementary Schools in Tucson, LA, Honolulu, and Glendale (CA)
-- 🏫 Middle and High School in Glendale (CA), Hoover High graduated '77
-- 🎓 Glendale CA Community College, UCLA Extension, LA Wilshire Computer Tech School '77 to '79
-- ⛪ England, London Missionary for Church of Jesus Christ of Latter-day Saints '79 to '81
-- 💼 Culver City, Glendale CA founder at Ashton-Tate, original PC's dBase 2 and 3 '82 to '87
-- 🎓 Eugene Oregon Undergraduate CompSci Degree at University of Oregon (Go Ducks!) '89 to '91
-- 💼 Eugene Oregon, founder and owner @ Microniche `88, Point Control CAD CAM developer '91 to '96
-- 🏢 San Diego CA Qualcomm, Satellite Comm and 1st Mobile OS (BREW) '96 to '19
-- 👨‍🏫 San Diego CA Teacher of Computer Science @ Del Norte High School San Diego '19 to present
-
-### Culture, Family, and Fun
-
-Everything for me, as for many others, revolves around family and faith.
-
-- My mother told me that I was Danish, English. and Irish, here is my researched [family tree]({{site.baseurl}}/images/about/familytree.png)
-- My family is pretty big as I have been married twice, my 1st wife passed away.  We have had 5 kids, 4 adopted by me, 1 biological.  Plus, there are three grandkids.  My name to my grandkids is Abuilito.
-- The gallery of pics has some of my family, fun, culture and faith memories.
-
-<comment>
-Gallery of Pics, scroll to the right for more ...
-</comment>
-<div class="image-gallery">
-  <img src="{{site.baseurl}}/images/about/missionary.jpg" alt="Image 1">
-  <img src="{{site.baseurl}}/images/about/john_tamara.jpg" alt="Image 2">
-  <img src="{{site.baseurl}}/images/about/tamara_fam.jpg" alt="Image 3">
-  <img src="{{site.baseurl}}/images/about/surf.jpg" alt="Image 4">
-  <img src="{{site.baseurl}}/images/about/john_lora.jpg" alt="Image 5">
-  <img src="{{site.baseurl}}/images/about/lora_fam.jpg" alt="Image 6">
-  <img src="{{site.baseurl}}/images/about/lora_fam2.jpg" alt="Image 7">
-  <img src="{{site.baseurl}}/images/about/pj_party.jpg" alt="Image 8">
-  <img src="{{site.baseurl}}/images/about/trent_family.png" alt="Image 9">
-  <img src="{{site.baseurl}}/images/about/claire.jpg" alt="Image 10">
-  <img src="{{site.baseurl}}/images/about/grandkids.jpg" alt="Image 11">
-  <img src="{{site.baseurl}}/images/about/farm.jpg" alt="Image 12">
 </div>
+
+<br>
+
+### 📚 My Lessons
+
+> My computer science lessons and classwork help me understand the foundations of programming.
+
+<div style="display: flex; flex-wrap: wrap; gap: 10px;">
+
+    <a href="{{site.baseurl}}/code/javascript" style="text-decoration: none;">
+        <div style="background-color: var(--green); color: black; padding: 10px 20px; border-radius: 5px; font-weight: bold; transition: transform 0.2s, box-shadow 0.2s;">
+            JS Basics
+        </div>
+    </a>
+
+    <a href="{{site.baseurl}}/game/essentials/variables" style="text-decoration: none;">
+        <div style="background-color: var(--blue); color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold; transition: transform 0.2s, box-shadow 0.2s;">
+            JS Variables
+        </div>
+    </a>
+
+    <a href="{{site.baseurl}}/gamerunner" style="text-decoration: none;">
+        <div style="background-color: var(--warn); color: black; padding: 10px 20px; border-radius: 5px; font-weight: bold; transition: transform 0.2s, box-shadow 0.2s;">
+            GameRunner
+        </div>
+    </a>
+
+    <a href="{{site.baseurl}}/network/stack" style="text-decoration: none;">
+        <div style="background-color: var(--orange); color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold; transition: transform 0.2s, box-shadow 0.2s;">
+            Networking
+        </div>
+    </a>
+
+</div>
+
+<br>
+
+### 🎮 Class Progress & Projects
+
+> Here are some of the projects I have worked on while learning computer science.
+
+<div style="display: flex; flex-wrap: wrap; gap: 10px;">
+
+    <a href="{{site.baseurl}}/snake" class="btn">
+        🐍 Snake
+    </a>
+
+    <a href="{{site.baseurl}}/gamify/parallax" class="btn" style="background-color: var(--green);">
+        🐟 Fish
+    </a>
+
+    <a href="{{site.baseurl}}/gamify" class="btn" style="background-color: var(--teal);">
+        🎮 Gamify
+    </a>
+
+    <a href="{{site.baseurl}}/cs-pathway" class="btn" style="background-color: var(--orange);">
+        💻 CS Pathway
+    </a>
+
+</div>
+
+<br>
+
+### 🤖 My Interests
+
+I am especially interested in:
+
+- 🤖 Artificial Intelligence
+- 💻 Computer Science
+- 🌐 Web Development
+- 🎮 Game Development
+- 🐍 Python Programming
+- ☕ Java Programming
+- 🏸 Badminton
+- 🧠 Learning new technologies
+
+<br>
+
+### 🎯 My Goals
+
+My goal is to become an **AI engineer or software engineer** and create technology that helps people solve real-world problems.
+
+I also want to continue improving as a **badminton player and coach**, while developing my leadership, teamwork, and communication skills.
+
+<br>
+
+### 🌟 About Me
+
+I enjoy challenging myself and learning skills that I can use in future projects. Computer science allows me to combine **creativity, problem-solving, and technology**.
+
+I have worked on projects involving games, websites, APIs, databases, and interactive applications. Every project helps me learn something new and become a better programmer.
+
+My goal is to keep building, experimenting, and improving one project at a time.
